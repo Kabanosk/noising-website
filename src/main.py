@@ -1,7 +1,7 @@
 from fastapi import FastAPI, Request, File, Form
 from fastapi.templating import Jinja2Templates
 
-from utils import downsample, prepare_zip_file
+from utils import ZipDataset
 
 app = FastAPI()
 templates = Jinja2Templates(directory='templates')
@@ -14,8 +14,8 @@ def index(request: Request):
 
 @app.post('/')
 def noise_files(request: Request, zip_file: bytes = File(), downsampling: str = Form("")):
-    files = prepare_zip_file(zip_file)
+    files = ZipDataset(zip_file)
     if downsampling == 'true':
-        downsample(files)
+        files.downsample(8000)
     return None
 

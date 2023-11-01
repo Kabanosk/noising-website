@@ -8,15 +8,15 @@
     <title>Noising website</title>
 </head>
 <body>
-<form method="post" action="/">
-    <input type="file">
+<form method="post" action="/" enctype="multipart/form-data">
+    <input type="file" name="zip_file" ><br>
 
     <label>
         <input type="checkbox" name="downsampling" value="true">
-        Downsampling
-    </label>
+        Downsampling (8k)
+    </label><br>
 
-    <input type="submit">
+    <input type="submit"><br>
 </form>
 </body>
 </html>

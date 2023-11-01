@@ -1,2 +1,7 @@
 fastapi
 jinja2
+librosa
+soundfile
+uvicorn
+python-multipart
+tqdm
